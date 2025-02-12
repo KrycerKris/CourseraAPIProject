@@ -1,11 +1,14 @@
 using CourseraAPIProject;
+using Microsoft.AspNetCore.Http;
 
-public interface IBookData {
-    public  Book[] GetBooks();
-    public Book GetBook(int id);
-    public int AddBook(Book newBook);
-    public int UpdateBook(Book updatedBook);
-    public void DeleteBook(Book book);
-
+namespace CourseraAPIProject.Services.Interfaces
+{
+    public interface IBookData {
+        public (Book[]? Books, bool Success) GetBooks();
+        public (Book? Book, bool Success) GetBook(int id);
+        public (int? Id, bool Success) AddBook(Book bookNew);
+        public bool UpdateBook(Book bookUpdated);
+        public bool DeleteBook(int id);
+    }
 }
 

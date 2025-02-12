@@ -1,0 +1,29 @@
+###
+
+GET http://localhost:5243/api/books
+
+###
+
+GET http://localhost:5243/api/books/1
+
+###
+
+POST http://localhost:5243/api/books
+Content-Type: application/json
+
+{
+  "title": "The Great Gatsby",
+  "author": "F. Scott Fitzgerald",
+  "releaseYear": 1987
+}
+
+###
+
+POST http://localhost:5243/api/books
+Content-Type: application/json
+
+{
+  "title": "Eragon",
+  "author": "Christopher Paolini",
+  "releaseYear": 2002
+}
