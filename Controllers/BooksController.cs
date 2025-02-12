@@ -30,11 +30,11 @@ namespace CourseraAPIProject.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddBook(Book? bookNew) {
+        public ActionResult AddBook(int? IdPreferred, Book? bookNew) {
             if(bookNew == null) 
                 return BadRequest("Invalid JSON input.");
 
-            (int? id, bool success) = _bookData.AddBook(bookNew);
+            (int? id, bool success) = _bookData.AddBook(IdPreferred, bookNew);
             if(!success)
                 return BadRequest("Invalid JSON input.");
 
@@ -46,7 +46,7 @@ namespace CourseraAPIProject.Controllers
             if(bookUpdated == null) 
                 return BadRequest("Invalid JSON input.");
 
-            if(!_bookData.UpdateBook(bookUpdated))
+            if(!_bookData.UpdateBook(id, bookUpdated))
                 return NotFound();
 
             return Ok(bookUpdated);
