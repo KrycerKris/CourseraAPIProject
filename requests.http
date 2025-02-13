@@ -27,3 +27,8 @@ Content-Type: application/json
   "author": "Christopher Paolini",
   "releaseYear": 2002
 }
+
+
+###
+
+GET http://localhost:5243/api/traffic/
